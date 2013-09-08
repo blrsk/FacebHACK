@@ -5,6 +5,9 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	url(r'^facebook/', include('django_facebook.urls')),
+	url(r'^accounts/', include('django_facebook.auth_urls')),
+    
     # Examples:
     # url(r'^$', 'facebhack.views.home', name='home'),
     # url(r'^facebhack/', include('facebhack.foo.urls')),
