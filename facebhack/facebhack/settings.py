@@ -16,7 +16,7 @@ import dj_database_url
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost/facebhack')}
 
 # Facebook Login
-FACEBOOK_APP_ID = 445754435540237
+FACEBOOK_APP_ID = '445754435540237'
 FACEBOOK_APP_SECRET = 'b602dbe9d5322b3e35b85b87bd4896a6'
 
 # Local time zone for this installation. Choices can be found here:
@@ -106,6 +106,13 @@ AUTHENTICATION_BACKENDS = (
 
 AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
+FACEBOOK_DEFAULT_SCOPE = [
+    'email',
+    'user_location',
+    'read_friendlists',
+    'offline_access'
+]
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,7 +145,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django_facebook',
